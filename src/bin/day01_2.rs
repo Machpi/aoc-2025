@@ -18,14 +18,7 @@ fn simulate_rotation(rotation: &Rotation, dial: &mut i32, counter: &mut i32) {
     }
 }
 
-
 fn main() {
-    let rotations = include_str!("../../inputs/day01.txt")
-        .lines()
-        .collect::<Vec<&str>>()
-        .iter()
-        .map(|&line| parse_rotation(line))
-        .collect();
-    let password = simulate_rotations(&rotations, simulate_rotation);
+    let password = process_file(simulate_rotation);
     println!("Password: {}", password);
 }

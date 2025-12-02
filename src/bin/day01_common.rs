@@ -18,3 +18,15 @@ where
     rotations.iter().for_each(|r| simulate(r, &mut dial, &mut counter));
     counter
 }
+
+pub fn process_file<F>(simulate: F) -> i32 
+where F: FnMut(&Rotation, &mut i32, &mut i32),
+{
+    let rotations = include_str!("../../inputs/day01.txt")
+        .lines()
+        .collect::<Vec<&str>>()
+        .iter()
+        .map(|&line| parse_rotation(line))
+        .collect();
+    simulate_rotations(&rotations, simulate)
+}
