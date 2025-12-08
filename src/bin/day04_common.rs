@@ -18,7 +18,7 @@ pub fn check_adjacent(mat: &Vec<Vec<bool>>, i: usize, j: usize) -> usize {
     count
 }
 
-pub fn get_mat () -> Vec<Vec<bool>> {
+pub fn get_mat() -> Vec<Vec<bool>> {
     include_str!("../../inputs/day04.txt")
         .lines()
         .map(|line| line.chars().map(|c| c == '@').collect::<Vec<bool>>())
